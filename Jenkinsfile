@@ -46,8 +46,8 @@ pipeline {
                 sh 'git clone $GITHUB_URL'
                 sh 'docker system prune -af'
                 sh 'docker build -t $imageName .'
-                sh 'docker stop $containerName || true && docker rm -f $containerName || true'
-                sh 'docker run -p 3000:3000 -d --name $containerName $imageName'
+                #sh 'docker stop $containerName || true && docker rm -f $containerName || true'
+                #sh 'docker run -p 3000:3000 -d --name $containerName $imageName'
                 
             }
             
